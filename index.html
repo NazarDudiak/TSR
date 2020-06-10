@@ -13,6 +13,7 @@
 		<title>TransServiceRivne</title>
 	</head>
 	<body>
+		<script src="js/main.js"></script>
 		<!-- connect jquery&slider-->
 		<!-- jQuery -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -21,6 +22,7 @@
 		<link
 			href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css"
 			rel="stylesheet"
+			type="text/css"
 		/>
 		<!-- 3 KB -->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
@@ -29,46 +31,75 @@
 
 		<div class="container">
 			<div class="header">
-				<div class="logo">
-					<svg class="logo-img">
-						<use xlink:href="img/icons.svg#logo"></use>
-					</svg>
+				<div class="m-header-line">
+					<div class="m-phone">
+						<a href="tel:0362609571" class="social-link">
+							<svg class="m-link">
+								<use xlink:href="img/icons.svg#m-phone"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="logo">
+						<svg class="logo-img">
+							<use xlink:href="img/icons.svg#logo"></use>
+						</svg>
 
-					<div class="logo-text">
-						ТРАНС<br />
-						СЕРВІС<br />
-						РІВНЕ
+						<div class="logo-text">
+							ТРАНС<br />
+							СЕРВІС<br />
+							РІВНЕ
+						</div>
+					</div>
+
+					<div class="m-menu" id="open-menu" onclick="menuOpen()">
+						<svg class="m-link">
+							<use xlink:href="img/icons.svg#m-menu"></use>
+						</svg>
 					</div>
 				</div>
 
-				<div class="menu">
-					<div class="link">ГОЛОВНА</div>
-					<div class="link">ПРО НАС</div>
-					<div class="link">КОНТАКТИ</div>
+				<div class="menu" id="menu">
+					<div class="link" onclick="menuHide()">
+						<a href="#main">ГОЛОВНА</a>
+					</div>
+					<div class="link" onclick="menuHide()">
+						<a href="#about">ПРО НАС</a>
+					</div>
+					<div class="link" onclick="menuHide()">
+						<a href="#contact">КОНТАКТИ</a>
+					</div>
 				</div>
 
-				<div class="social">
-					<a href="#" class="social-link">
+				<div class="social" id="social">
+					<a href="tel:0362609571" class="social-link">
 						<svg class="social-img" width="30px" height="50px">
 							<use xlink:href="img/icons.svg#phone"></use>
 						</svg>
 					</a>
 
-					<a href="#" class="social-link">
+					<a
+						class="social-link"
+						href="mailto:admin@tsr.rv.ua?subject"
+						="HTML link"
+					>
 						<svg class="social-img" width="70px" height="50px">
 							<use xlink:href="img/icons.svg#mail"></use>
 						</svg>
 					</a>
 
-					<a href="#" class="social-link">
-						<svg class="social-img" width="60px" height="50px">
-							<use xlink:href="img/icons.svg#twitter"></use>
+					<a
+						href="https://www.facebook.com/TransServiceRivne/"
+						class="social-link"
+						target="_blank"
+					>
+						<svg class="social-img" width="25px" height="50px">
+							<use xlink:href="img/icons.svg#facebook"></use>
 						</svg>
 					</a>
 
-					<a href="#" class="social-link">
-						<svg class="social-img" width="25px" height="50px">
-							<use xlink:href="img/icons.svg#facebook"></use>
+					<!-- <a href="#" class="social-link">
+						<svg class="social-img" width="60px" height="50px">
+							<use xlink:href="img/icons.svg#twitter"></use>
 						</svg>
 					</a>
 
@@ -82,11 +113,11 @@
 						<svg class="social-img" width="60px" height="50px">
 							<use xlink:href="img/icons.svg#telegram"></use>
 						</svg>
-					</a>
+					</a> -->
 				</div>
 			</div>
 
-			<div class="slider">
+			<div class="slider" id="main">
 				<div
 					class="fotorama"
 					data-width="100%"
@@ -98,27 +129,27 @@
 					data-fit="cover"
 				>
 					<div data-img="img/slides/slide01.jpg">
-						<p>#</p>
+						<p></p>
 					</div>
 					<div data-img="img/slides/slide02.jpg">
-						<p>#</p>
+						<p></p>
 					</div>
 					<div data-img="img/slides/slide03.jpg">
-						<p>#</p>
+						<p></p>
 					</div>
 					<div data-img="img/slides/slide04.jpg">
-						<p>#</p>
+						<p></p>
 					</div>
 					<div data-img="img/slides/slide06.jpg">
-						<p>#</p>
+						<p></p>
 					</div>
 					<div data-img="img/slides/slide08.jpg">
-						<p>#</p>
+						<p></p>
 					</div>
 				</div>
 			</div>
 
-			<div class="about">
+			<div class="about" id="about">
 				<div class="about-title">ПРО НАС</div>
 				<div class="about-block">
 					<img
@@ -136,16 +167,27 @@
 							Ми сильні в технологічності, інтегрованості в бізнес
 							клієнтів і побудови логістичних мереж.
 						</p>
-
-						<p>Ми представлені в європейських країнах.</p>
 					</div>
 				</div>
 
-				<div class="about-block">
+				<div class="about-block about-block-reversed">
 					<div class="about-text">
 						<p>
 							Наша компанія першою в Україні проводить закупку
 							нового покоління автомобілів Scania R450.
+						</p>
+						<p>Ми представлені в європейських країнах.</p>
+						<p>
+							Ми маємо сучасний і економічний автопарк, провідних
+							компаній, який дозволяє доставляти ваш вантаж з
+							мінімальними затратами і конкурувати з гігантами
+							ринку.
+						</p>
+						<p>
+							Ми маємо сучасний і економічний автопарк, провідних
+							компаній, який дозволяє доставляти ваш вантаж з
+							мінімальними затратами і конкурувати з гігантами
+							ринку.
 						</p>
 					</div>
 					<img
@@ -171,7 +213,7 @@
 					</div>
 				</div>
 
-				<div class="about-block">
+				<div class="about-block about-block-reversed">
 					<div class="about-text">
 						<p>
 							Для здійснення міжнародних перевезень потрібні
@@ -206,7 +248,7 @@
 					allowfullscreen
 				></iframe>
 			</div>
-			<div class="contact">
+			<div class="contact" id="contact">
 				<div class="map">
 					<iframe
 						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1688.542251402949!2d26.259649667344785!3d50.64653114392575!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa1dd4542713c19f5!2z0KLQoNCQ0J3QoS3QodCV0KDQktCG0KEt0KDQhtCS0J3QlSwg0KLQntCS!5e0!3m2!1suk!2sua!4v1591646650140!5m2!1suk!2sua"
@@ -227,7 +269,7 @@
 				</div>
 				<div class="info">
 					<p>КОНТАКТИ</p>
-					<table style="width: 100%;">
+					<table class="info-table">
 						<tr>
 							<td>Понеділок</td>
 							<th>08:30 – 17:00</th>
@@ -262,27 +304,31 @@
 			<div class="footer">
 				<div class="copyright">2020 © ТРАНС СЕРВІС РІВНЕ</div>
 				<div class="social">
-					<a href="#" class="social-link">
+					<a href="tel:0362609571" class="social-link">
 						<svg class="social-img" width="30px" height="50px">
 							<use xlink:href="img/icons.svg#phone"></use>
 						</svg>
 					</a>
 
-					<a href="#" class="social-link">
+					<a class="social-link" href="mailto:admin@tsr.rv.ua">
 						<svg class="social-img" width="70px" height="50px">
 							<use xlink:href="img/icons.svg#mail"></use>
 						</svg>
 					</a>
 
-					<a href="#" class="social-link">
-						<svg class="social-img" width="60px" height="50px">
-							<use xlink:href="img/icons.svg#twitter"></use>
+					<a
+						href="https://www.facebook.com/TransServiceRivne/"
+						class="social-link"
+						target="_blank"
+					>
+						<svg class="social-img" width="25px" height="50px">
+							<use xlink:href="img/icons.svg#facebook"></use>
 						</svg>
 					</a>
 
-					<a href="#" class="social-link">
-						<svg class="social-img" width="25px" height="50px">
-							<use xlink:href="img/icons.svg#facebook"></use>
+					<!-- <a href="#" class="social-link">
+						<svg class="social-img" width="60px" height="50px">
+							<use xlink:href="img/icons.svg#twitter"></use>
 						</svg>
 					</a>
 
@@ -296,7 +342,7 @@
 						<svg class="social-img" width="60px" height="50px">
 							<use xlink:href="img/icons.svg#telegram"></use>
 						</svg>
-					</a>
+					</a> -->
 				</div>
 			</div>
 		</div>
