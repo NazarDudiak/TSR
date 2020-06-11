@@ -579,14 +579,28 @@ body {
 	}
 
 	.social {
-		margin: auto;
+		margin: auto auto 30px auto;
+	}
+
+	.map {
+		height: 300px;
+	}
+
+	.or-line {
+		margin-top: 500px;
 	}
 
 	.info {
 		margin: 50px auto;
 	}
+
+	.info-table {
+		margin: 175px auto 15px auto;
+	}
+
 	.footer-social .social-link {
 		margin: 0px 10px;
 	}
+
 	/* зменшити блок лого */
 }
